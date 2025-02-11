@@ -39,25 +39,6 @@
         "sessionExpiry": ""
     },
     {
-        "id": "66c36b25aa3a910b",
-        "type": "ui_tab",
-        "name": "Homeassistant",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "f9231751a7c1217f",
-        "type": "ui_group",
-        "name": "Anzeigen",
-        "tab": "66c36b25aa3a910b",
-        "order": 1,
-        "disp": true,
-        "width": 6,
-        "collapse": false,
-        "className": ""
-    },
-    {
         "id": "730c6ca92331e289",
         "type": "ui_base",
         "theme": {
@@ -66,7 +47,8 @@
                 "default": "#0094CE",
                 "baseColor": "#0094CE",
                 "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": false
+                "edited": true,
+                "reset": false
             },
             "darkTheme": {
                 "default": "#097479",
@@ -154,6 +136,25 @@
         }
     },
     {
+        "id": "66c36b25aa3a910b",
+        "type": "ui_tab",
+        "name": "Homeassistant",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "f9231751a7c1217f",
+        "type": "ui_group",
+        "name": "Anzeigen",
+        "tab": "66c36b25aa3a910b",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
         "id": "de7a1dba2646e6df",
         "type": "mqtt in",
         "z": "dd4a705d3e599101",
@@ -170,8 +171,7 @@
         "y": 80,
         "wires": [
             [
-                "9ace447d562d7935",
-                "53d444e05c9c39a5"
+                "9ace447d562d7935"
             ]
         ]
     },
@@ -260,9 +260,27 @@
         "y": 120,
         "wires": [
             [
-                "febb3041db67366f"
+                "febb3041db67366f",
+                "c3f20a5775d8f9e2"
             ]
         ]
+    },
+    {
+        "id": "51767c647e0600e1",
+        "type": "debug",
+        "z": "dd4a705d3e599101",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 260,
+        "wires": []
     },
     {
         "id": "54a6ee1db9cc1275",
@@ -356,10 +374,10 @@
         "wires": []
     },
     {
-        "id": "53d444e05c9c39a5",
+        "id": "c3f20a5775d8f9e2",
         "type": "debug",
         "z": "dd4a705d3e599101",
-        "name": "debug 1",
+        "name": "debug 3",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -367,25 +385,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 340,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "51767c647e0600e1",
-        "type": "debug",
-        "z": "dd4a705d3e599101",
-        "name": "debug 2",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1040,
-        "y": 260,
+        "x": 740,
+        "y": 300,
         "wires": []
     }
 ]
