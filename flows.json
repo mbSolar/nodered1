@@ -1,0 +1,156 @@
+[
+    {
+        "id": "80bb83ddd853bde3",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1b6bfa1643a71373",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "5529ad19b396b7a6",
+        "type": "inject",
+        "z": "80bb83ddd853bde3",
+        "name": "LED an",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "on",
+        "payloadType": "str",
+        "x": 310,
+        "y": 140,
+        "wires": [
+            [
+                "f5ea059862becae8",
+                "a1fab8188aad96b3"
+            ]
+        ]
+    },
+    {
+        "id": "f5ea059862becae8",
+        "type": "mqtt out",
+        "z": "80bb83ddd853bde3",
+        "name": "",
+        "topic": "ESP32/LED",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "1b6bfa1643a71373",
+        "x": 650,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "b6ae57a358794cbb",
+        "type": "inject",
+        "z": "80bb83ddd853bde3",
+        "name": "LED aus",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "off",
+        "payloadType": "str",
+        "x": 320,
+        "y": 300,
+        "wires": [
+            [
+                "f5ea059862becae8",
+                "a1fab8188aad96b3"
+            ]
+        ]
+    },
+    {
+        "id": "a1fab8188aad96b3",
+        "type": "debug",
+        "z": "80bb83ddd853bde3",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "76ee58ef753d7755",
+        "type": "mqtt in",
+        "z": "80bb83ddd853bde3",
+        "name": "",
+        "topic": "esp32/dht",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "1b6bfa1643a71373",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 60,
+        "wires": [
+            [
+                "a1fab8188aad96b3"
+            ]
+        ]
+    }
+]
